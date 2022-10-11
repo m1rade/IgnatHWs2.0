@@ -30,7 +30,7 @@ export const message0: MessageType = {
     id: 0,
     user: {
         avatar: avatar, // можно менять
-        name: 'Some Name',  // можно менять
+        name: 'Your Name',  // можно менять
     },
     message: {
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit eligendi porro eaque iste quo unde?", // можно менять

@@ -1,5 +1,9 @@
 .friendMessage {
     display: flex;
+    justify-content: start;
+    align-items: flex-end;
+
+    font-family: 'Montserrat', sans-serif;
 }
 
 .friendImageAndText {
@@ -17,6 +21,7 @@
     background-color: #ababab;
     box-shadow: 1px 1px 1px 1px #212A34;
 
+    position: relative;
     padding: 10px;
     margin: 15px 0;
 
@@ -24,7 +29,15 @@
 }
 
 .friendText:after {
-
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(40px at top left, transparent 50%, rgba(171 171 171) 0) no-repeat right bottom;
+    box-shadow: 0 2px 0 0 #212a34;
 }
 
 .friendName {
@@ -36,8 +49,11 @@
 .friendMessageText {
     color: #f0f8ff;
     white-space: normal;
+    width: 290px;
 }
 
 .friendTime {
     color: rgba(45, 112, 237, 0.67);
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
