@@ -2,34 +2,90 @@
 }
 
 .inputAndButtonContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px 0;
+
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .error {
+    font-weight: 400;
+    line-height: 17px;
+
+    margin-top: 10px;
+    height: 20px;
+
+    color: #CC0000;
 }
 
 .input {
+    height: 36px;
+    width: 372px;
+    padding: 8px 12px;
+
+    outline: none;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
 }
 
 .input:focus {
+    border: 1px solid;
 }
 
 .errorInput {
+    border: 1px solid #CC0000;
 }
 
 .button {
+    width: 78px;
+    height: 36px;
+
+    font-weight: 600;
+    line-height: 20px;
+    color: white;
+
+    outline: none;
+
+    background: #0066CC;
+    border-radius: 3px;
+    border: 1px solid #000d20;
+
+    cursor: pointer;
 }
 
-.button:focus {
+.button:hover {
+    box-shadow: 2px 2px 12px 0 #000d20;
 }
 
 .button:active {
+    box-shadow: 2px 7px 12px 0 #000d20;
+    transform: translateY(3px);
 }
 
 .button:disabled {
+    opacity: 0.5;
 }
 
 .text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .greeting {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
 }

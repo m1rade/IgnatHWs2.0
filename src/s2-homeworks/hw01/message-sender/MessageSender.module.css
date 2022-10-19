@@ -53,4 +53,9 @@
 .button:active {
     background: #2350b0;
     color: white;
+    transform: translateY(3px) translateX(2px);
+}
+
+.button:focus {
+    border: 2px solid;
 }
