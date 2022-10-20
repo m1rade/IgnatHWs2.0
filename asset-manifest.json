@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/IgnatHWs2.0/static/css/main.418e5b76.css",
-    "main.js": "/IgnatHWs2.0/static/js/main.1ca5d5d5.js",
+    "main.css": "/IgnatHWs2.0/static/css/main.f425d683.css",
+    "main.js": "/IgnatHWs2.0/static/js/main.35b67004.js",
     "static/js/787.66cb4309.chunk.js": "/IgnatHWs2.0/static/js/787.66cb4309.chunk.js",
     "static/media/avatar.png": "/IgnatHWs2.0/static/media/avatar.d947cb9d0d13765666b6.png",
+    "static/media/404.svg": "/IgnatHWs2.0/static/media/404.dae7af4892f2a3abe805a174178919f2.svg",
+    "static/media/closeOutline.svg": "/IgnatHWs2.0/static/media/closeOutline.91a6693133923612a0702421ab3e9923.svg",
     "static/media/checked.svg": "/IgnatHWs2.0/static/media/checked.0b6a1bcf5d417ff0a947.svg",
     "index.html": "/IgnatHWs2.0/index.html",
-    "main.418e5b76.css.map": "/IgnatHWs2.0/static/css/main.418e5b76.css.map",
-    "main.1ca5d5d5.js.map": "/IgnatHWs2.0/static/js/main.1ca5d5d5.js.map",
+    "static/media/burger.svg": "/IgnatHWs2.0/static/media/burger.e4e6b98e4ee0b2dfcd76d02a9eed2e34.svg",
+    "main.f425d683.css.map": "/IgnatHWs2.0/static/css/main.f425d683.css.map",
+    "main.35b67004.js.map": "/IgnatHWs2.0/static/js/main.35b67004.js.map",
     "787.66cb4309.chunk.js.map": "/IgnatHWs2.0/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.418e5b76.css",
-    "static/js/main.1ca5d5d5.js"
+    "static/css/main.f425d683.css",
+    "static/js/main.35b67004.js"
   ]
 }
