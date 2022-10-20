@@ -41,10 +41,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         to={PATH.JUNIOR}
                         onClick={handleClose}
                         // className={...} // делает студент
-                        className={({isActive}) => {
-                            debugger
-                            console.log(isActive)
-                            return isActive ? " " + s.active : ""}}
+                        className={({isActive}) => isActive ? " " + s.active : ""}
                     >
                         Junior
                     </NavLink>
