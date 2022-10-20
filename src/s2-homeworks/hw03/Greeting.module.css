@@ -63,11 +63,11 @@
 }
 
 .button:hover {
-    box-shadow: 2px 2px 12px 0 #000d20;
+    box-shadow: 2px 2px 8px 0 #0066CC;
 }
 
 .button:active {
-    box-shadow: 2px 7px 12px 0 #000d20;
+    box-shadow: 2px 4px 8px 0 #0066CC;
     transform: translateY(3px);
 }
 
@@ -81,7 +81,7 @@
     font-size: 14px;
     line-height: 17px;
 
-    color: rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
 }
 
 .greeting {
