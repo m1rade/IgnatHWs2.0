@@ -3,6 +3,10 @@
     height: 24px;
 }
 
+.burgerMenuIcon:hover {
+    border: 1px solid;
+}
+
 .header {
     display: flex;
     align-items: center;

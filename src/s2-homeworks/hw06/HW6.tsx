@@ -12,19 +12,20 @@ import s from './HW6.module.css'
  */
 
 const HW6 = () => {
-    const [value, setValue] = useState<string>('')
+    const [value, setValue] = useState<string>('');
 
     const save = () => {
-        saveState<string>('hw6-editable-span-value', value)
+        saveState<string>('hw6-editable-span-value', value);
     }
     const restore = () => {
         // делают студенты
-
+        setValue(restoreState<string>('hw6-editable-span-value', ""));
     }
 
     return (
         <div id={'hw6'}>
             <div className={s2.hwTitle}>Homework #6</div>
+            <hr/>
 
             {/*демонстрация возможностей компоненты:*/}
             <div className={s2.hw}>
@@ -42,14 +43,14 @@ const HW6 = () => {
 
                 <div className={s.buttonsContainer}>
                     <SuperButton id={'hw6-save'} onClick={save}>
-                        Save to ls
+                        Save to local storage
                     </SuperButton>
                     <SuperButton
                         id={'hw6-restore'}
                         onClick={restore}
                         xType={'secondary'}
                     >
-                        Get from ls
+                        Get from local storage
                     </SuperButton>
                 </div>
             </div>
