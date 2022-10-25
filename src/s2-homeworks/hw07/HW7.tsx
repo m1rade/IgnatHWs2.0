@@ -12,18 +12,18 @@ import s from './HW7.module.css'
 * */
 
 type StateType = {
-    id: number,
+    id: string,
     value: string
 }
 
 const arr: StateType[] = [
-    { id: 1, value: 'Pre-Junior' },
-    { id: 2, value: 'Junior' },
-    { id: 3, value: 'Junior+' },
+    { id: "1", value: 'Pre-Junior' },
+    { id: "2", value: 'Junior' },
+    { id: "3", value: 'Junior+' },
 ] // value может быть изменено
 
 const HW7 = () => {
-    const [value, onChangeOption] = useState<string>(arr[0].value); // селект и радио должны работать синхронно
+    const [value, onChangeOption] = useState("1"); // селект и радио должны работать синхронно
 
     return (
         <div id={'hw7'}>
