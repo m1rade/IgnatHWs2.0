@@ -12,7 +12,9 @@ import s2 from '../../s1-main/App.module.css'
 const HW9 = () => {
     return (
         <div id={'hw9'}>
+            <hr />
             <div className={s2.hwTitle}>Homework #9</div>
+            <hr />
 
             <div className={s2.hw}>
                 <Clock />
