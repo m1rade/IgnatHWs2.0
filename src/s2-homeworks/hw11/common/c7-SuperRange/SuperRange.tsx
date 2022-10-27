@@ -10,18 +10,18 @@ const SuperRange: React.FC<SliderProps> = (props) => {
                 "& .MuiSlider-thumb": {
                     color: "white",
                     border: "1px solid #81c784",
-                    '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
-                        boxShadow: '0 0 0 8px rgb(129, 199, 132, 0.5)',
+                    "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
+                        boxShadow: "0 0 0 8px rgb(129, 199, 132, 0.5)",
                     },
                 },
-                '& .MuiSlider-rail': {
+                "& .MuiSlider-rail": {
                     opacity: 0.5,
-                    backgroundColor: '#8B8B8B',
+                    backgroundColor: "#8B8B8B",
                 },
             }}
             {...props} // отдаём слайдеру пропсы если они есть (value например там внутри)
-                />
-                )
-            }
+        />
+    )
+}
 
-            export default SuperRange
+export default SuperRange
