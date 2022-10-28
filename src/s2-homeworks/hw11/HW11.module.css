@@ -13,5 +13,6 @@
 }
 
 .number {
-    padding: 15px;
+    margin: 15px;
+    width: 10px;
 }
