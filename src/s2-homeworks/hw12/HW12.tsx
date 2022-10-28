@@ -13,7 +13,12 @@ import {AppStoreType} from "../hw10/bll/store";
 * 4 - передать пропсы в SuperSelect
 * */
 
-const themes = [
+type ThemeType = {
+    id: number,
+    value: string
+}
+
+const themes: ThemeType[] = [
     {id: 1, value: "light"},
     {id: 2, value: "blue"},
     {id: 3, value: "dark"},
@@ -41,7 +46,6 @@ const HW12 = () => {
                 <SuperSelect
                     id={"hw12-select-theme"}
                     className={s.select}
-                    // сделать переключение тем
                     options={themes}
                     value={themeId}
                     onChangeOption={change}
