@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react'
-import s2 from '../../s1-main/App.module.css'
-import s from './HW15.module.css'
-import axios from 'axios'
-import SuperPagination from './common/c9-SuperPagination/SuperPagination'
-import {useSearchParams} from 'react-router-dom'
-import SuperSort from './common/c10-SuperSort/SuperSort'
+import React, {useEffect, useState} from "react"
+import s2 from "../../s1-main/App.module.css"
+import s from "./HW15.module.css"
+import axios from "axios"
+import SuperPagination from "./common/c9-SuperPagination/SuperPagination"
+import {useSearchParams} from "react-router-dom"
+import SuperSort from "./common/c10-SuperSort/SuperSort"
 
 /*
 * 1 - дописать SuperPagination
@@ -30,7 +30,7 @@ type ParamsType = {
 const getTechs = (params: ParamsType) => {
     return axios
         .get<{ techs: TechType[], totalCount: number }>(
-            'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test3',
+            "https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test3",
             {params}
         )
         .catch((e) => {
@@ -39,7 +39,7 @@ const getTechs = (params: ParamsType) => {
 }
 
 const HW15 = () => {
-    const [sort, setSort] = useState('')
+    const [sort, setSort] = useState("")
     const [page, setPage] = useState(1)
     const [count, setCount] = useState(4)
     const [idLoading, setLoading] = useState(false)
@@ -54,7 +54,9 @@ const HW15 = () => {
                 // делает студент
 
                 // сохранить пришедшие данные
-
+                if (res?.statusText === "OK") {
+                    setTechs(res.data.techs)
+                }
                 //
             })
     }
@@ -62,8 +64,8 @@ const HW15 = () => {
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
-        // setPage(
-        // setCount(
+        setPage(newPage);
+        setCount(newCount);
 
         // sendQuery(
         // setSearchParams(
@@ -92,22 +94,24 @@ const HW15 = () => {
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
-            <div id={'hw15-tech-' + t.id} className={s.tech}>
+            <div id={"hw15-tech-" + t.id} className={s.tech}>
                 {t.tech}
             </div>
 
-            <div id={'hw15-developer-' + t.id} className={s.developer}>
+            <div id={"hw15-developer-" + t.id} className={s.developer}>
                 {t.developer}
             </div>
         </div>
     ))
 
     return (
-        <div id={'hw15'}>
+        <div id={"hw15"}>
+            <hr/>
             <div className={s2.hwTitle}>Homework #15</div>
+            <hr/>
 
             <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                {idLoading && <div id={"hw15-loading"} className={s.loading}>Loading...</div>}
 
                 <SuperPagination
                     page={page}
@@ -119,12 +123,12 @@ const HW15 = () => {
                 <div className={s.rowHeader}>
                     <div className={s.techHeader}>
                         tech
-                        <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                        <SuperSort sort={sort} value={"tech"} onChange={onChangeSort}/>
                     </div>
 
                     <div className={s.developerHeader}>
                         developer
-                        <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
+                        <SuperSort sort={sort} value={"developer"} onChange={onChangeSort}/>
                     </div>
                 </div>
 
