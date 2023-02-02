@@ -5,6 +5,7 @@ import axios from "axios"
 import SuperPagination from "./common/c9-SuperPagination/SuperPagination"
 import {useSearchParams} from "react-router-dom"
 import SuperSort from "./common/c10-SuperSort/SuperSort"
+import {Loader} from "../hw10/Loader";
 
 /*
 * 1 - дописать SuperPagination
@@ -43,7 +44,7 @@ const HW15 = () => {
     const [page, setPage] = useState(1)
     const [count, setCount] = useState(4)
     const [idLoading, setLoading] = useState(false)
-    const [totalCount, setTotalCount] = useState(100)
+    const [totalCount, setTotalCount] = useState(10)
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
@@ -55,7 +56,9 @@ const HW15 = () => {
 
                 // сохранить пришедшие данные
                 if (res?.statusText === "OK") {
-                    setTechs(res.data.techs)
+                    setLoading(false);
+                    setTechs(res.data.techs);
+                    setTotalCount(res.data.totalCount);
                 }
                 //
             })
@@ -67,22 +70,20 @@ const HW15 = () => {
         setPage(newPage);
         setCount(newCount);
 
-        // sendQuery(
-        // setSearchParams(
+        sendQuery({page: newPage, count: newCount});
+        setSearchParams(JSON.stringify(newCount));
 
-        //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort);
+        setPage(1); // при сортировке сбрасывать на 1 страницу
 
-        // sendQuery(
-        // setSearchParams(
+        sendQuery(newSort);
+        setSearchParams(newSort);
 
-        //
     }
 
     useEffect(() => {
@@ -111,28 +112,34 @@ const HW15 = () => {
             <hr/>
 
             <div className={s2.hw}>
-                {idLoading && <div id={"hw15-loading"} className={s.loading}>Loading...</div>}
+                {idLoading ? (
+                    <div id={"hw15-loading"} className={s.loading}>
+                        <Loader/>
+                    </div>) : (
+                    <>
+                        <SuperPagination
+                            page={page}
+                            itemsCountForPage={count}
+                            totalCount={totalCount}
+                            onChange={onChangePagination}
+                        />
 
-                <SuperPagination
-                    page={page}
-                    itemsCountForPage={count}
-                    totalCount={totalCount}
-                    onChange={onChangePagination}
-                />
+                        <div className={s.rowHeader}>
+                            <div className={s.techHeader}>
+                                tech
+                                <SuperSort sort={sort} value={"tech"} onChange={onChangeSort}/>
+                            </div>
 
-                <div className={s.rowHeader}>
-                    <div className={s.techHeader}>
-                        tech
-                        <SuperSort sort={sort} value={"tech"} onChange={onChangeSort}/>
-                    </div>
+                            <div className={s.developerHeader}>
+                                developer
+                                <SuperSort sort={sort} value={"developer"} onChange={onChangeSort}/>
+                            </div>
+                        </div>
 
-                    <div className={s.developerHeader}>
-                        developer
-                        <SuperSort sort={sort} value={"developer"} onChange={onChangeSort}/>
-                    </div>
-                </div>
+                        {mappedTechs}
+                    </>)
 
-                {mappedTechs}
+                }
             </div>
         </div>
     )
