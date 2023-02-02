@@ -70,7 +70,7 @@ const HW15 = () => {
         setPage(newPage);
         setCount(newCount);
 
-        sendQuery({page: newPage, count: newCount});
+        sendQuery({sort, page: newPage, count: newCount});
         setSearchParams(JSON.stringify(newCount));
 
     }
@@ -81,7 +81,7 @@ const HW15 = () => {
         setSort(newSort);
         setPage(1); // при сортировке сбрасывать на 1 страницу
 
-        sendQuery(newSort);
+        sendQuery({sort: newSort, page, count});
         setSearchParams(newSort);
 
     }
